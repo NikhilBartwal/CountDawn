@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorDark">#222222</color>
+    <color name="colorWhite">#ffffff</color>
+
+    <!-- Screen Background Colors !-->
+
+    <color name = "colorFat">#fef880</color>
+    <color name = "colorCalorie">#eed4d5</color>
+    <color name = "colorDiet">#e3e5d0</color>
+    <color name = "colorExercise">#62a76e</color>
+    <color name = "colorSteps">	#f7fbe7</color>
+
+
+    <!-- Screen dots inactive colors!-->
+    <color name = "FatInactive">#D8D254</color>
+    <color name = "CalorieInactive">#E3B6B8</color>
+    <color name = "DietInactive">#CFD1B8</color>
+    <color name = "ExerciseInactive">#4E925A</color>
+    <color name = "StepsInactive">#E0B474</color>
+
+
+    <!-- Screen dots active colors!-->
+    <color name = "FatActive">#FCF9B8</color>
+    <color name = "CalorieActive">#ECE2E3</color>
+    <color name = "DietActive">#F7F8EA</color>
+    <color name = "ExerciseActive">#8FD29A</color>
+    <color name = "StepsActive">#FCEDD7</color>
+
+
+    <array name="array_dot_active">
+        <item>@color/FatActive</item>
+        <item>@color/CalorieActive</item>
+        <item>@color/DietActive</item>
+        <item>@color/ExerciseActive</item>
+        <item>@color/StepsActive</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/FatInactive</item>
+        <item>@color/CalorieInactive</item>
+        <item>@color/DietInactive</item>
+        <item>@color/ExerciseInactive</item>
+        <item>@color/StepsInactive</item>
+
+    </array>
+
+
+
+</resources>

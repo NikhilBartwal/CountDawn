@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">CountDawn</string>
+    <string name="welcome_name">welcome</string>
+
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide1">From Fat, To Fit</string>
+    <string name="slide2">Count Up Your Calories!</string>
+    <string name="slide3">Plan Your Meals Ahead!</string>
+    <string name="slide4">Do What\'s Good For You</string>
+    <string name="slide5">How Many Did You Take?</string>
+    <string name="font">casual</string>
+    <string name="main_name">main</string>
+    <string name="menu">Insert Menu Here</string>
+
+
+</resources>
