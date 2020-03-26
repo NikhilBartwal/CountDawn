@@ -20,9 +20,14 @@
             android:name=".MainActivity"
             android:label="@string/main_name"
             android:theme="@style/AppTheme" />
-        <activity android:name=".WelcomeActivity"
+        <activity
+            android:name=".WelcomeActivity"
             android:label="@string/welcome_name"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".HomeScreen"
+            android:label="@string/home"
+            android:theme="@style/AppTheme"></activity>
+
     </application>
 
 </manifest>
