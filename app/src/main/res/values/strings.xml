@@ -22,6 +22,8 @@
     <string name="feedFragmentText">Let\'s get some feed bro!</string>
     <string name="stepsFragmentText">Count your steps!</string>
     <string name="home">homeScreen</string>
+    <string name="startPedometer">Start Pedometer</string>
+    <string name="stopPedometer">Stop Pedometer</string>
 
 
 </resources>

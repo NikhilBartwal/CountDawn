@@ -13,13 +13,13 @@ public class HomeScreen extends AppCompatActivity implements Home.OnFragmentInte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tablayout);
+        TabLayout tabLayout = findViewById(R.id.tablayout);
         tabLayout.addTab(tabLayout.newTab().setText("Feed"));
         tabLayout.addTab(tabLayout.newTab().setText("Home"));
         tabLayout.addTab(tabLayout.newTab().setText("Steps"));
         tabLayout.setTabGravity(tabLayout.GRAVITY_FILL);
 
-        final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+        final ViewPager viewPager = findViewById(R.id.pager);
         final MyPageAdapter myPagerAdapter = new MyPageAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
         viewPager.setAdapter(myPagerAdapter);
         viewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
