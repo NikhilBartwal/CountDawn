@@ -19,8 +19,9 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\nikhil\Desktop\logo.JPG" />
-                                      <entry key="outputName" value="logo" />
+                                      <entry key="imageAsset" value="C:\Users\nikhil\Desktop\back.gif" />
+                                      <entry key="outputName" value="pause" />
+                                      <entry key="themeColor" value="f5fa55" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -31,20 +32,15 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="backgroundLayerName" value="ic_launcher_background" />
-                                      <entry key="foregroundImage" value="C:\Users\nikhil\Desktop\logo.JPG" />
-                                      <entry key="foregroundLayerName" value="ic_launcher_foreground" />
-                                      <entry key="outputName" value="logo" />
+                                      <entry key="backgroundLayerName" value="ic_launcher_backgroundcircle" />
+                                      <entry key="foregroundImage" value="C:\Users\nikhil\Desktop\back.gif" />
+                                      <entry key="foregroundLayerName" value="ic_launcher_circle" />
+                                      <entry key="outputName" value="Backcircle" />
                                     </map>
                                   </option>
                                 </PersistentState>
                               </value>
                             </entry>
-                          </map>
-                        </option>
-                        <option name="values">
-                          <map>
-                            <entry key="outputIconType" value="ACTIONBAR" />
                           </map>
                         </option>
                       </PersistentState>

@@ -49,6 +49,11 @@
 
     </array>
 
+    <color name="colorBlue">#1E2538</color>
+    <color name="colorBlueDark">#0E121B</color>
+    <color name="colorBlueBackground">#151B29</color>
+    <color name="colorYellow">#F5FA55</color>
+
 
 
 </resources>

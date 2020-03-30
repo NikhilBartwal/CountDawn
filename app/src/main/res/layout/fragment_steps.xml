@@ -1,29 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:gravity="center"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorBlueBackground">
+
+    <ProgressBar
+        android:id="@+id/progressBarCircle"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="270dp"
+        android:layout_height="270dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/drawable_circle_dark_blue"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="100"
+        android:progressDrawable="@drawable/drawable_circle_yellow"
+        android:rotation="-90" />
 
     <TextView
-        android:id="@+id/tv_steps"
-        android:layout_width="match_parent"
+        android:id="@+id/tvsteps"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        />
+        android:layout_centerInParent="true"
+        android:text="@string/letsgo"
+        android:textColor="@color/colorYellow"
+        android:textSize="40sp" />
 
-    <Button
-        android:id="@+id/btn_start"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/startPedometer"
-        />
+    <ImageView
+        android:id="@+id/imageViewStart"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/progressBarCircle"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/start"
+        android:contentDescription="@string/startButtonCounter" />
 
-    <Button
-        android:id="@+id/btn_stop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/stopPedometer"
-        />
+    <ImageView
+        android:id="@+id/imageViewStop"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/progressBarCircle"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_toStartOf="@+id/imageViewStartPause"
+        android:layout_toLeftOf="@+id/imageViewStartPause"
+        android:contentDescription="@string/stopButtonDescription"
+        android:visibility="invisible"
+        android:src="@drawable/stop" />
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/imageViewStartPause"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/progressBarCircle"
+        android:layout_alignEnd="@+id/tvsteps"
+        android:layout_marginTop="30dp"
+        android:contentDescription="@string/startPauseButtonDescription"
+        android:src="@drawable/pause"
+        android:visibility="invisible"
+        android:layout_alignRight="@+id/tvsteps" />
+
+</RelativeLayout>

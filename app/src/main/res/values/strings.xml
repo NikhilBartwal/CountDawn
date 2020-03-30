@@ -22,8 +22,17 @@
     <string name="feedFragmentText">Let\'s get some feed bro!</string>
     <string name="stepsFragmentText">Count your steps!</string>
     <string name="home">homeScreen</string>
-    <string name="startPedometer">Start Pedometer</string>
-    <string name="stopPedometer">Stop Pedometer</string>
+    <string name="startPedometer">Start</string>
+    <string name="pausePedometer">Pause</string>
+    <string name="stopPedometer">Stop</string>
+    <string name="resumePedometer">Resume</string>
+    <string name="time">00:01:00</string>
+    <string name="stopButtonDescription">Button to stop counter</string>
+    <string name="resetButtonCounter">Button to reset counter</string>
+    <string name="startButtonCounter">Button to start counter</string>
+    <string name="startPauseButtonDescription">Button to start/pause counter</string>
+    <string name="zero">00</string>
+    <string name="letsgo">Let\'s Go!</string>
 
 
 </resources>

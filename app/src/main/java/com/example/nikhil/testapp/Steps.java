@@ -9,13 +9,16 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Steps extends Fragment implements SensorEventListener,StepListener {
     // TODO: Rename parameter arguments, choose names that match
@@ -23,16 +26,12 @@ public class Steps extends Fragment implements SensorEventListener,StepListener 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
     private OnFragmentInteractionListener mListener;
 
     public Steps() {
         // Required empty public constructor
     }
-    private Context mActivity;
+
     private TextView tvsteps;
     private StepDetector simpleStepDetector;
     private SensorManager sensorManager;
@@ -40,13 +39,16 @@ public class Steps extends Fragment implements SensorEventListener,StepListener 
     private static final String TEXT_NUM_STEPS = "Number of Steps: ";
     private int numSteps;
     private final SensorEventListener sel = this;
+    private int pause = 0;
+    private int started = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            // TODO: Rename and change types of parameters
+            String mParam1 = getArguments().getString(ARG_PARAM1);
+            String mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
@@ -60,23 +62,57 @@ public class Steps extends Fragment implements SensorEventListener,StepListener 
         simpleStepDetector = new StepDetector();
         simpleStepDetector.registerListener(this);
 
-        tvsteps = (TextView) rootView.findViewById(R.id.tv_steps);
-        Button btnStart = rootView.findViewById(R.id.btn_start);
-        Button btnStop = rootView.findViewById(R.id.btn_stop);
-        btnStart.setOnClickListener(new View.OnClickListener() {
+        tvsteps = (TextView) rootView.findViewById(R.id.tvsteps);
+        final ImageView imageViewStart = rootView.findViewById(R.id.imageViewStart);
+        final ImageView imageViewStartPause = rootView.findViewById(R.id.imageViewStartPause);
+        final ImageView imageViewStop = rootView.findViewById(R.id.imageViewStop);
+
+        imageViewStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 numSteps = 0;
+                started = 1;
                 sensorManager.registerListener(sel,accel,SensorManager.SENSOR_DELAY_FASTEST);
+                imageViewStart.setVisibility(View.INVISIBLE);
+                imageViewStartPause.setVisibility(View.VISIBLE);
+                imageViewStartPause.setImageResource(R.drawable.pause);
+                imageViewStop.setVisibility(View.VISIBLE);
             }
         });
 
-        btnStop.setOnClickListener(new View.OnClickListener() {
+        imageViewStartPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sensorManager.unregisterListener(sel);
+                if(started == 1){
+                    if(pause == 0){
+                        sensorManager.unregisterListener(sel);
+                        pause = 1;
+                        imageViewStartPause.setImageResource(R.drawable.start);
+                    }
+                    else{
+                        pause = 0;
+                        imageViewStartPause.setImageResource(R.drawable.pause);
+                        sensorManager.registerListener(sel,accel,SensorManager.SENSOR_DELAY_FASTEST);
+                    }
+                }
+                else{
+                    Toast.makeText(getActivity(),"Please start the counter first!",Toast.LENGTH_SHORT).show();
+                }
             }
         });
+        imageViewStop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                started = 0;
+                numSteps = 0;
+                sensorManager.unregisterListener(sel);
+                imageViewStart.setVisibility(View.VISIBLE);
+                imageViewStartPause.setVisibility(View.INVISIBLE);
+                imageViewStop.setVisibility(View.INVISIBLE);
+                tvsteps.setText(getString(R.string.letsgo));
+            }
+        });
+
         return rootView;
 
     }
@@ -91,7 +127,6 @@ public class Steps extends Fragment implements SensorEventListener,StepListener 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        mActivity = context;
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
@@ -123,7 +158,7 @@ public class Steps extends Fragment implements SensorEventListener,StepListener 
     @Override
     public void step(long timeNs) {
         numSteps++;
-        String text = TEXT_NUM_STEPS + numSteps;
+        String text = "Steps: " + numSteps;
         tvsteps.setText(text);
     }
 
