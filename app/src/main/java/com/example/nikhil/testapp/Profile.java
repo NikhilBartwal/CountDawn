@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class Feed extends Fragment {
+public class Profile extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -20,7 +20,7 @@ public class Feed extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public Feed() {
+    public Profile() {
         // Required empty public constructor
     }
 
@@ -37,7 +37,7 @@ public class Feed extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_feed, container, false);
+        return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -6,7 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class HomeScreen extends AppCompatActivity implements Home.OnFragmentInteractionListener,Feed.OnFragmentInteractionListener,Steps.OnFragmentInteractionListener{
+public class HomeScreen extends AppCompatActivity implements Home.OnFragmentInteractionListener, Profile.OnFragmentInteractionListener,Steps.OnFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,7 +14,7 @@ public class HomeScreen extends AppCompatActivity implements Home.OnFragmentInte
         setContentView(R.layout.activity_home_screen);
 
         TabLayout tabLayout = findViewById(R.id.tablayout);
-        tabLayout.addTab(tabLayout.newTab().setText("Feed"));
+        tabLayout.addTab(tabLayout.newTab().setText("Profile"));
         tabLayout.addTab(tabLayout.newTab().setText("Home"));
         tabLayout.addTab(tabLayout.newTab().setText("Steps"));
         tabLayout.setTabGravity(tabLayout.GRAVITY_FILL);

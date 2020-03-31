@@ -44,6 +44,8 @@ public class Home extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+
+        /* Link walks cardview to 'step' tracker frag */
         CardView walkCardView = rootView.findViewById(R.id.walkCardview);
         walkCardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +54,17 @@ public class Home extends Fragment {
                 viewpager.setCurrentItem(2);
             }
         });
+
+        /* Link profile cardview to 'profile' frag */
+        CardView profileCardview = rootView.findViewById(R.id.profileCardview);
+        profileCardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ViewPager viewpager = getActivity().findViewById(R.id.pager);
+                viewpager.setCurrentItem(0);
+            }
+        });
+
         return rootView;
 
     }

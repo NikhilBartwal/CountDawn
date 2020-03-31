@@ -19,7 +19,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="homeFragmentText">Welcome Home</string>
-    <string name="feedFragmentText">Let\'s get some feed bro!</string>
+    <string name="feedFragmentText">All about you</string>
     <string name="stepsFragmentText">Count your steps!</string>
     <string name="home">homeScreen</string>
     <string name="startPedometer">Start</string>
