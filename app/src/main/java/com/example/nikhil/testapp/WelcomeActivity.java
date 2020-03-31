@@ -16,6 +16,10 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class WelcomeActivity extends AppCompatActivity {
 
@@ -25,16 +29,30 @@ public class WelcomeActivity extends AppCompatActivity {
     private Button btnSkip, btnNext;
     private PrefManager prefManager;
 
+    FirebaseUser fauth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Checking for first time launch - before calling setContentView()
         prefManager = new PrefManager(this);
-        if (!prefManager.isFirstTimeLaunch()) {
-            launchHomeScreen();
+        // Init fauth with current user
+        fauth = FirebaseAuth.getInstance().getCurrentUser();
+
+        /* Not First Time And User Is Logged In */
+        if (!prefManager.isFirstTimeLaunch() && fauth != null) {
+                launchHomeScreen();
+                finish();
+        }
+
+        /* Not First Time But User NOT Logged In */
+        if(!prefManager.isFirstTimeLaunch() && fauth == null) {
+            Intent intent = new Intent(WelcomeActivity.this,Login.class);
+            startActivity(intent);
             finish();
         }
+
 
         // Making notification bar transparent
         if (Build.VERSION.SDK_INT >= 21) {
@@ -71,7 +89,14 @@ public class WelcomeActivity extends AppCompatActivity {
         btnSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                launchHomeScreen();
+                if (fauth == null) {
+                    Intent intent = new Intent(WelcomeActivity.this, Login.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else {
+                    launchHomeScreen();
+                }
             }
         });
 
@@ -85,8 +110,17 @@ public class WelcomeActivity extends AppCompatActivity {
                     // move to next screen
                     viewPager.setCurrentItem(current);
                 }
+                /* Intro Complete, now redirect to login */
                 else {
-                    launchHomeScreen();
+                    if (fauth == null) {
+                        Intent intent = new Intent(WelcomeActivity.this, Login.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), "Logged In", Toast.LENGTH_SHORT).show();
+                        launchHomeScreen();
+                    }
                 }
             }
         });
