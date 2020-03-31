@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Register"></activity>
+        <activity android:name=".Login" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,10 +26,10 @@
             android:name=".WelcomeActivity"
             android:label="@string/welcome_name"
             android:theme="@style/AppTheme" />
-        <activity android:name=".HomeScreen"
+        <activity
+            android:name=".HomeScreen"
             android:label="@string/home"
-            android:theme="@style/AppTheme"></activity>
-
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
