@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#FFC107</color>
+    <color name="colorPrimaryDark">#FFA000</color>
+    <color name="colorAccent">#FF4081</color>
     <color name="colorDark">#222222</color>
     <color name="colorWhite">#ffffff</color>
     <color name="toolbarTextColor">#4d79ff</color>
+
+    <!-- Extra Colors -->
+    <color name="colorBlue">#1E2538</color>
+    <color name="colorBlueDark">#0E121B</color>
+    <color name="colorBlueBackground">#151B29</color>
+    <color name="colorYellow">#F5FA55</color>
+
+    <color name="backgroundcolor">#fcfcfc</color>
+    <color name="lightgray">#ededed</color>
+    <color name="deeppurple">#7c4dff</color>
+    <color name="yello">#ffb300</color>
+    <color name="green">#00bfa5</color>
+    <color name="darkblue">#23283a</color>
+    <color name="testcolorblue">#152b38</color>
+    <color name="pink">#fe104d</color>
+    <color name="black_overlay">#66000000</color>
 
     <!-- Screen Background Colors !-->
 
@@ -48,12 +64,5 @@
         <item>@color/StepsInactive</item>
 
     </array>
-
-    <color name="colorBlue">#1E2538</color>
-    <color name="colorBlueDark">#0E121B</color>
-    <color name="colorBlueBackground">#151B29</color>
-    <color name="colorYellow">#F5FA55</color>
-
-
 
 </resources>
