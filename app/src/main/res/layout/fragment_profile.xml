@@ -19,15 +19,17 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:src="@drawable/ic_account_box_black_24dp"/>
+
             <TextView
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center_horizontal"
+                android:id="@+id/nameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
                 android:text="Pranav Kapoor"
                 android:textColor="#fff"
-                android:textStyle="bold"
-                android:textSize="21sp"/>
+                android:textSize="21sp"
+                android:textStyle="bold" />
         </LinearLayout>
         <android.support.v7.widget.CardView
             android:layout_width="400dp"
@@ -57,6 +59,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
+                        android:text="20"
                         android:textColor="@color/colorBlueDark"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -80,6 +83,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
+                        android:text="180cm"
                         android:textColor="@color/colorBlue"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -103,6 +107,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
+                        android:text="70Kg"
                         android:textColor="@color/colorBlue"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -146,14 +151,15 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:src="@drawable/ic_local_phone_black_24dp"/>
-            <TextView
-                android:textStyle="bold"
 
-                android:layout_gravity="center_vertical"
+            <TextView
                 android:layout_width="wrap_content"
+
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:paddingLeft="20dp"
-                android:text="+266 225 225"/>
+                android:text="+966xxxxxxx"
+                android:textStyle="bold" />
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="25dp"
@@ -165,14 +171,15 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:src="@drawable/ic_group_add_black_24dp"/>
-            <TextView
-                android:textStyle="bold"
 
-                android:layout_gravity="center_vertical"
+            <TextView
                 android:layout_width="wrap_content"
+
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:paddingLeft="20dp"
-                android:text="Add to group"/>
+                android:text="Add to group"
+                android:textStyle="bold" />
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="25dp"
@@ -184,24 +191,25 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:src="@drawable/ic_forum_black_24dp"/>
-            <TextView
-                android:textStyle="bold"
 
-                android:layout_gravity="center_vertical"
+            <TextView
                 android:layout_width="wrap_content"
+
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:paddingLeft="20dp"
-                android:text="Show all comments"/>
+                android:text="Feedback"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 
     <Button
-        android:textColor="#fff"
-        android:background="@drawable/buttonstyle"
-        android:layout_marginTop="35dp"
-        android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Follow Me"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/buttonstyle"
+        android:text="Edit"
+        android:textColor="#fff" />
 
 </LinearLayout>
